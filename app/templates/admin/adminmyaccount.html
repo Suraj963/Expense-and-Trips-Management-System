@@ -1,0 +1,146 @@
+{% csrf_token %} 
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin/My account</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/admin_css/adminmyaccount.css">
+  </head>
+  <body>
+     <!-- Navigation starts here -->
+
+
+     {% include 'navigation.html' %}
+     
+
+    <!-- Navigation ends here -->
+
+
+    <!-- Logout starts here -->
+
+    <section class="d-flex">
+        <div class="position-absolute top-0 start-100">
+          <button type="button" class="button" id="logout">Logout</button>
+        </div>
+      </section> 
+
+      <!-- Logout ends here -->
+     
+    
+      <!-- Profile photo starts here -->
+
+      <section class="cover">
+        <img src="/static/img/adminlogo.jpg" id="adminImage" height="100px" width="100px">
+        <div class="input--file">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3.2"/>
+              <path d="M9 2l-1.83 2h-3.17c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-12c0-1.1-.9-2-2-2h-3.17l-1.83-2h-6zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+              <path d="M0 0h24v24h-24z" fill="none"/>
+            </svg>
+          </span> 
+          <input name="File" id="profilePhoto" type="file">
+        </div>
+        <div>
+          <button type="button" class="upload" id="Upload" onclick="get_update_adminphoto();">Upload</button>
+        </div>
+      
+      </section>
+
+      <!-- Profile photo ends here -->
+
+
+      <!-- Personal details starts here -->
+
+      <section>
+        <div class="h3"><h3>Personal Details 
+        <a href="#"><i class="fa-solid fa-user-pen"></i></a>
+
+        </h3></div>
+        <hr>
+        <div class="container">
+         <div class="row">
+          <div class="col-md-3">
+            <label>User name</label>
+          </div>
+          <div class="col-md-3">
+            <input type="text" id="name" class="txt">
+          </div>
+         </div>
+        </div>
+      
+        <div class="container">
+          <div class="row">
+           <div class="col-md-3">
+             <label>Email-id</label>
+           </div>
+           <div class="col-md-3">
+             <input type="email" id="email" class="txt">
+           </div>
+          </div>
+         </div>
+
+         <div class="container">
+          <div class="row">
+           <div class="col-md-3">
+             <label>Contact No</label>
+           </div>
+           <div class="col-md-3">
+             <input type="text" id="mobile" class="txt">
+           </div>
+          </div>
+         </div>
+
+         <div class="container">
+          <div class="row">
+           <div class="col-md-3">
+             <label>Password</label>
+           </div>
+           <div class="col-md-3">
+             <input type="password" id="password" class="txt">
+           </div>
+          </div>
+         </div>
+
+         {% comment %} <div class="container">
+          <div class="row">
+           <div class="col-md-3">
+             <label>Address</label>
+           </div>
+           <div class="col-md-3">
+             <textarea id="adress" name="adress" rows="2" cols="20" class="txt">
+              dvgdsfvdeg sgdcgvfyggss
+              sdgsyguhds dssssssgygs
+              sgddddddddddeiu sgyeeeeeeeeed
+             </textarea>
+           </div>
+          </div>
+         </div> {% endcomment %}
+        </section>
+
+        <div class>
+          <button type="button" id="Update" class="btttttt">Update</button>
+      </div>
+
+
+
+<!-- 
+      <section class="account">
+        <div>
+        <img src="images/logo1.png" height="100px" width="100px">
+        </div>
+      </section>       -->
+
+  </body>
+</html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/static/js/admin_js/adminmyaccount.js"></script>
+    <script src="/static/js/admin_js/logout.js"></script>
+    <script src="https://kit.fontawesome.com/5ee1cbc0d0.js" crossorigin="anonymous"></script>
+

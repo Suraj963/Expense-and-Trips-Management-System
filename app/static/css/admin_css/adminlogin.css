@@ -1,0 +1,75 @@
+.navigation{
+    display:flex;
+   
+}
+body{
+    background-image: url(background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+nav .box{
+    border:2px solid grey;
+    height:270px;
+    width:280px;
+    position: absolute;
+    left:600px;
+    top:200px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    text-align: center;
+   
+}
+
+nav .box .input input{
+    width:90%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    border:1px solid #eeebeb;
+    border-radius: 9px;
+    font-weight: bolder;
+    
+
+}
+nav .login button{
+    padding: 7px;
+    margin-top: 10px;
+    border-radius: 10px;
+    width:90%;
+    font-size: 15px;
+    color: white;
+    background-color: rgb(136, 6, 36);
+}
+nav .box .forgot a{
+    font-size: 14px;
+    color: blue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    display: block;
+}
+nav .Newaccount button{
+    width:50%;
+    color:white;
+    font-size: 15px;
+    background-color:  rgb(136, 6, 36);
+    margin-top: 7px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding:5px;
+    
+}
+nav .in{
+    position: absolute;
+    left:370px;
+    top:320px;
+    font-size: 60px;
+}
+nav .p{
+    position: absolute;
+    left:370px;
+    top:425px;
+    font-size: 20px;
+    display: inline-block;
+}

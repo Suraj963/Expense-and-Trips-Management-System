@@ -1,0 +1,329 @@
+{% csrf_token %} 
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin/Reminder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/static/css/admin_css/admintransactions.css">
+  </head>
+  <body>
+     <!-- Navigation starts here -->
+
+
+     {% include 'navigation.html' %}
+   
+
+    <!-- Navigation ends here -->
+
+
+    <!-- Logout starts here -->
+
+    <section class="d-flex">
+        <div class="position-absolute top-0 start-100">
+          <button type="button" class="button" id="logout">Logout</button>
+        </div>
+      </section> 
+
+      <!-- Logout ends here -->
+
+{% comment %} Add new transaction starts here{% endcomment %}
+<section class="button">
+  <!-- Button trigger modal -->
+<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+Add Category
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Category</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <div class="mb-3">
+        <form>  
+            
+            <div class="form-group">  
+              <label>Category:</label>  
+              <select name="category" id="category" class="form-control">
+                <option value="">Select Category</option>
+                <option value="Current_Bill">Current_Bill</option>
+                <option value="Mobile_Recharge">Mobile_Recharge</option>
+                <option value="Water_Bill">Water_Bill</option>
+                <option value="EMI">EMI</option>
+                <option value="Rent">Rent</option>
+                <option value="Others">Others</option>
+              </select>
+            </div>  
+
+            {% comment %} <div class="form-group">  
+                <label>Area:</label>  
+                <select name="dist" id="dist" class="form-control">
+                  <option value="">Select Area</option>
+                  <option value="Central bus stand">Central bus stand</option>
+                  <option value="Central bus stand">Central bus stand Hubli</option>
+                  <option value="Central bus stand">Central bus stand Dharwad</option>
+                  <option value="Tilakwadi">Tilakwadi</option>
+                  <option value="Chennamma circe">Chennamma circle</option>
+                </select>
+              </div>   {% endcomment %}
+
+               {% comment %} <div class="form-group">  
+                <label>Latitude:</label>  
+                <input type="text" id="latitude" name="latitude" class="form-control" placeholder="Enter latitude">  
+              </div>  
+
+              <div class="form-group">  
+                  <label>longitude:</label>  
+                  <input type="text" id="longitude" name="longitude" class="form-control" placeholder="Enter Expense Category">  
+                </div>   
+                <div class="form-group">  
+                  <label>Link:</label>  
+                  <input type="text" id="link" name="link" class="form-control" placeholder="Enter link">  
+                </div>    {% endcomment %}
+                
+                
+              
+            <!-- <div class="form-group">  
+              <label>City:</label>  
+              <input type="text" name="email" class="form-control" placeholder="Enter Amount">  
+            </div>   -->
+            
+             <div class="Button">
+            <button type="button" id="Submit" class="btnn btn-success save-btn">Save</button> 
+          </div> 
+</form>
+              
+    </div>
+    <!-- <div class="modal-footer">
+        <button type="button" class="Button btn-danger" id="btnSaveIt">Save</button> -->
+        <!-- <button type="button" class="btn btn-default" id="btnCloseIt" data-dismiss="modal">Close</button> -->
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</section> 
+
+
+<section class="">
+  <!-- Button trigger modal -->
+<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+Update
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="edit_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="staticBackdropLabel">Add City</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <div class="mb-3">
+        <form>  
+
+          <div class="form-group">  
+            <label>Id:</label>  
+            <input type="text" id="id" name="id" class="form-control" placeholder="Enter id">  
+          </div>  
+
+            
+            <div class="form-group">  
+              <label>Category:</label>  
+              <select name="category" id="category" class="form-control">
+                <option value="">Select Category</option>
+                <option value="Entertainement">Current Bill</option>
+                <option value="Shopping">Mobile Recharge</option>
+                <option value="Travelling">Water Bill</option>
+                <option value="Health">EMI</option>
+                <option value="Education">Rent</option>
+                <option value="Others">Others</option>
+              </select>
+            </div>  
+
+            {% comment %} <div class="form-group">  
+                <label>Area:</label>  
+                <select name="dist" id="dist" class="form-control">
+                  <option value="">Select Area</option>
+                  <option value="Central bus stand">Central bus stand</option>
+                  <option value="Central bus stand">Central bus stand Hubli</option>
+                  <option value="Central bus stand">Central bus stand Dharwad</option>
+                  <option value="Tilakwadi">Tilakwadi</option>
+                  <option value="Chennamma circe">Chennamma circle</option>
+                </select>
+              </div>   {% endcomment %}
+
+               {% comment %} <div class="form-group">  
+                <label>Latitude:</label>  
+                <input type="text" id="latitude" name="latitude" class="form-control" placeholder="Enter latitude">  
+              </div>  
+
+              <div class="form-group">  
+                  <label>longitude:</label>  
+                  <input type="text" id="longitude" name="longitude" class="form-control" placeholder="Enter Expense Category">  
+                </div>   
+                <div class="form-group">  
+                  <label>Link:</label>  
+                  <input type="text" id="link" name="link" class="form-control" placeholder="Enter link">  
+                </div>    {% endcomment %}
+                
+                
+              
+            <!-- <div class="form-group">  
+              <label>City:</label>  
+              <input type="text" name="email" class="form-control" placeholder="Enter Amount">  
+            </div>   -->
+            
+             <div class="Button">
+            <button type="button" id="update" class="btnn btn-success save-btn">Update</button> 
+          </div> 
+</form>
+              
+    </div>
+    <!-- <div class="modal-footer">
+        <button type="button" class="Button btn-danger" id="btnSaveIt">Save</button> -->
+        <!-- <button type="button" class="btn btn-default" id="btnCloseIt" data-dismiss="modal">Close</button> -->
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</section> 
+
+
+
+<section class="">
+  <!-- Button trigger modal -->
+<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+Delete
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="delete_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="staticBackdropLabel">Add new Transaction</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <div class="mb-3">
+        <form>  
+          <div class="form-group">  
+            <label>Id:</label>  
+            <input type="text" id="id1" name="id" class="form-control" placeholder="Enter id">  
+          </div>  
+
+            {% comment %} <div class="form-group">  
+              <label>Transaction:</label>  
+              <input type="text" id="transaction1" name="transaction1" class="form-control" placeholder="Enter Transaction">  
+            </div>  
+
+            <div class="form-group">  
+                <label>Expense Category:</label>  
+                <input type="text" id="expense1" name="expense1" class="form-control" placeholder="Enter Expense Category">  
+              </div>  
+              
+            <div class="form-group">  
+              <label>Amount:</label>  
+              <input type="text" id="amount1" name="amount1" class="form-control" placeholder="Enter Amount">  
+            </div>  
+            <div class="form-group">  
+                <!-- <label>Gender</label> <br>
+            <select>
+              <option value=" " name="password">Select Gender</option>
+              <option value="Male" name="password">Male</option>
+              <option value="Female" name="password">Female</option>
+            </select>
+        <label> -->
+                <label>Transaction type:</label>  
+                <input type="text" id="debit1" name="debit1" class="form-control" placeholder="Enter Debit or Credit">  
+              </div>  
+            
+          <div class="form-group">  
+            <label>Date:</label>  
+            <input type="text" id="date1" name="date1" class="form-control" placeholder="Date">  
+          </div>  
+          <div class="form-group">  
+            <label>Created by:</label>  
+            <input type="text" id="create1" name="create1" class="form-control" placeholder="Created by">  
+          </div>   {% endcomment %}
+          <div class="Button">
+            <button type="button" id="delete" class="btnn btn-success save-btn">Delete</button> 
+          </div> 
+</form>
+              
+    </div>
+    <!-- <div class="modal-footer">
+        <button type="button" class="Button btn-danger" id="btnSaveIt">Save</button> -->
+        <!-- <button type="button" class="btn btn-default" id="btnCloseIt" data-dismiss="modal">Close</button> -->
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+
+       <!-- Table starts here -->
+
+    <section class="container">
+        <table class="table table-bordered data-table" id="tableData">  
+            <thead>  
+              <th>Id</th>  
+              <th>Category</th>  
+              <th width="200px">Action</th>  
+            </thead>  
+            <tbody id="table">  
+              
+            </tbody>  
+          </table> 
+      </section>
+
+      <section>
+        <!-- <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div> -->
+        <!-- <input type="button" id="btnPieChart" value="Pie Chart" /> -->
+    {% comment %} <div id="chartContainer" style="height: 370px; width: 100%;"></div> {% endcomment %}
+       
+      </section>
+
+  </body>
+</html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="/static/js/admin_js/admintransactions.js"></script>
+    <script src="/static/js/admin_js/logout.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/5ee1cbc0d0.js" crossorigin="anonymous"></script>
+    {% comment %} <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> {% endcomment %}
+    <script type="text/javascript"></script>
+    {% comment %} <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script> {% endcomment %}
+    {% comment %} <script src="http://code.highcharts.com/highcharts.js"></script> {% endcomment %}
+    {% comment %} <script src="http://code.highcharts.com/modules/exporting.js"></script> {% endcomment %}
+
+{% comment %} <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script> {% endcomment %}
+{% comment %} <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script> {% endcomment %}
+
+
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#tableData').DataTable({
+        pagingType: 'full_numbers',
+    });
+});
+</script>
+ 

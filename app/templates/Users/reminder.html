@@ -1,0 +1,99 @@
+{% csrf_token %} 
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/static/css/user_css/reminder.css">
+  </head>
+  <body> 
+     <!-- Navigation starts here -->
+
+
+     {% include 'index.html' %}
+   
+
+    <!-- Navigation ends here -->
+
+
+    <!-- Logout starts here -->
+
+    <section class="d-flex">
+        <div class="position-absolute top-0 start-100">
+          <button type="button" class="button" id="logout">Logout</button>
+        </div>
+      </section> 
+
+      <!-- Logout ends here -->
+
+
+      <!-- Heading starts here -->
+
+      <!-- <section class="bg">
+        <h1 class="h1">Welcome...Admin</h1>
+      </section> -->
+
+      <!-- Heading ends here -->
+
+
+       <!-- Table starts here -->
+
+    <section class="container">
+        <table class="table" id="tableData">  
+            <thead>  
+              <th>Id</th>
+              {% comment %} <th>Transactions</th>   {% endcomment %}
+              <th>Expense Category</th>  
+              {% comment %} <th>Amount</th>   {% endcomment %}
+              {% comment %} <th>Transaction type</th> {% endcomment %}
+              {% comment %} <th>Date</th> {% endcomment %}
+              <th>Status</th>
+              {% comment %} <th width="200px">Action</th>   {% endcomment %}
+            </thead>  
+            <tbody id="table">  
+              
+            </tbody>  
+          </table> 
+      </section>
+
+      <section>
+        <!-- <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div> -->
+        <!-- <input type="button" id="btnPieChart" value="Pie Chart" /> -->
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+       
+      </section>
+
+  </body>
+</html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    {% comment %} <script src="/static/js/user_js/transactions.js"></script> {% endcomment %}
+    <script src="/static/js/user_js/logout.js"></script>
+    <script src="/static/js/user_js/reminder.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/5ee1cbc0d0.js" crossorigin="anonymous"></script>
+    {% comment %} <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> {% endcomment %}
+    <script type="text/javascript"></script>
+    {% comment %} <script src="http://code.jquery.com/jquery-1.6.3.min.js"></script> {% endcomment %}
+    {% comment %} <script src="http://code.highcharts.com/highcharts.js"></script> {% endcomment %}
+    {% comment %} <script src="http://code.highcharts.com/modules/exporting.js"></script> {% endcomment %}
+
+{% comment %} <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script> {% endcomment %}
+
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#tableData').DataTable({
+        pagingType: 'full_numbers',
+    });
+});
+</script>
+ 

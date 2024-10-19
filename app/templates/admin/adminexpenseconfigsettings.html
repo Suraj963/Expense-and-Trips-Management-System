@@ -1,0 +1,138 @@
+{% csrf_token %} 
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin/Configuration(Expense)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/admin_css/adminexpenseconfigsettings.css">
+  </head>
+  <body>
+     <!-- Navigation starts here -->
+
+     {% include 'navigation.html' %}
+    
+
+    <!-- Navigation ends here -->
+
+
+    <!-- Logout starts here -->
+
+    <section class="d-flex">
+        <div class="position-absolute top-0 start-100">
+          <button type="button" class="button" id="logout">Logout</button>
+        </div>
+      </section> 
+
+      <!-- Logout ends here -->
+
+
+      <!-- Heading starts here -->
+
+      <!-- <section class="bg">
+        <h1 class="h1">Welcome...Admin</h1>
+      </section> -->
+
+      <!-- Heading ends here -->
+
+<!-- Settings starts here -->
+
+      <section>
+        <div class="h1"><h1>Expense category setting</h1><hr>
+            </div>
+      </section>
+
+      <!-- Settings ends here -->
+
+        <!-- Add new member starts here -->
+
+<section class="button">
+    <!-- Button trigger modal -->
+<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+ Add category
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add category</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+            <form>  
+                
+                <div class="form-group">  
+                  <label>Sl.No:</label>  
+                  <input type="text" name="name" class="form-control" placeholder="Enter Serial No">  
+                </div>  
+                  
+                <div class="form-group">  
+                  <label>Category:</label>  
+                  <input type="text" name="email" class="form-control" placeholder="Enter Expense category">  
+                </div>  
+                <div class="form-group">  
+                    <!-- <label>Gender</label> <br>
+                <select>
+                  <option value=" " name="password">Select Gender</option>
+                  <option value="Male" name="password">Male</option>
+                  <option value="Female" name="password">Female</option>
+                </select>
+            <label> -->
+                    <label>Sub-Category</label>  
+                    <input type="text" name="password" class="form-control" placeholder="Enter Expense sub-category">  
+                  </div>  
+              <!-- <div class="form-group">  
+                <label>City:</label>  
+                <input type="text" name="email" class="form-control" placeholder="Enter Amount">  
+              </div>   -->
+              
+               <div class="Button">
+              <button type="submit" class="btnn btn-success save-btn">Save</button> 
+            </div> 
+  </form>
+                
+      </div>
+      <!-- <div class="modal-footer">
+          <button type="button" class="Button btn-danger" id="btnSaveIt">Save</button> -->
+          <!-- <button type="button" class="btn btn-default" id="btnCloseIt" data-dismiss="modal">Close</button> -->
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+     <!-- Table starts here -->
+
+  <section class="container">
+      <table class="table table-bordered data-table">  
+          <thead>  
+            <th>Sl.No</th>  
+            <th>Category</th>  
+            <th>Sub-Category</th>  
+            <th width="200px">Action</th>  
+          </thead>  
+          <tbody>  
+            
+          </tbody>  
+        </table> 
+    </section>
+
+
+  </body>
+</html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="/static/js/admin_js/adminexpenseconfigsettings.js"></script>
+    <script src="/static/js/admin_js/logout.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/5ee1cbc0d0.js" crossorigin="anonymous"></script>
+

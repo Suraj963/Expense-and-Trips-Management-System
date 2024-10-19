@@ -1,0 +1,61 @@
+<section>
+  <div class="sidebar">
+    <a href="#" class="logo">
+        <img src="/static/img/logo1.png" class="logo-img">
+    </a>
+    <ul class="nav-links">
+        <li><a href="/admindashboard/"><i class="fa-solid fa-house"></i></i> Dashboard</a></li>
+        <li>
+            <a href="/adminmyaccount/"><i class="fa-solid fa-user"></i></i> My account</a>
+        </li>
+        <li>
+            <a href="/admintransactions/"><i class="fa-solid fa-credit-card"></i></i></i>Reminder</a>
+        </li>
+        {% comment %} <li>
+            <a href="/expenses/"><i class="fa-sharp fa-solid fa-wallet"></i></i> Expenses</a>
+        </li>
+        <li>
+          <a href="/wallet/"><i class="fa-sharp fa-solid fa-coins"></i>Wallet</a>
+      </li> {% endcomment %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button"  data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-sharp fa-solid fa-plane-departure"></i> Trips</a>
+          <ul class="dropdown-menu">
+            {% comment %} <li><a class="dropdown-item" href="/citytrip/">City</a></li> {% endcomment %}
+            <li><a class="dropdown-item" href="/areatrip/">Area</a></li>
+            {% comment %} <li><a class="dropdown-item" href="/distancetrip/">Distance</a></li>   {% endcomment %}
+            <li><a class="dropdown-item" href="/adminlocation/">Location</a></li>    
+          </ul>
+        </li>
+         <li class="nav-item">
+            <a href="/adminsettings/"><i class="fa-sharp fa-solid fa-gear"></i> Settings</a>
+        </li>
+        <div class="active"></div>
+    </ul>
+ 
+  </div>
+</section>
+ 
+ 
+ 
+ 
+ {% comment %} <nav class="navbar navbar-expand-lg bg-body-tertiary"> {% endcomment %}
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/index/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact/">Contact us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> 
